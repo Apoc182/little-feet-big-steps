@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+venv/
+.Python
+*.sqlite3
+media/
+node_modules
