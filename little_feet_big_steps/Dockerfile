@@ -1,3 +1,14 @@
+FROM node:21.3.0 as build
+
+WORKDIR /app
+
+COPY ./frontend/src ./frontend/src
+COPY ./package.json ./webpack.config.js .babelrc ./
+
+RUN npm install
+
+RUN npm run build
+
 # Use an official Python runtime as a parent image
 FROM python:3.11
 
@@ -5,9 +16,6 @@ FROM python:3.11
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Install node
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
-  && apt-get install -y nodejs
 
 # Set work directory
 WORKDIR /app
@@ -19,18 +27,17 @@ RUN pip install --upgrade pip
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
+
 # Copy the current directory contents into the container at /app/
-COPY . /app/
-
-WORKDIR /app/frontend
-RUN npm install
-RUN npm run build
-RUN cp -r build/* /app/static/
-
 WORKDIR /app
+
+COPY . .
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
+
+COPY --from=build /app/webpack-stats.json /app/webpack-stats.json
+COPY --from=build /app/frontend/static/frontend ./staticfiles/frontend
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000

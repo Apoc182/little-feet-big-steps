@@ -1,11 +1,12 @@
 from django.db import models
+from django.utils import timezone
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
     lat = models.FloatField()
     long = models.FloatField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
 
     @property
     def all_images(self):

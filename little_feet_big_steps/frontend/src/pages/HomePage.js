@@ -10,7 +10,7 @@ function HomePage(){
 
 
 
-    
+
     return (<div>
         <header style={{ textAlign: "center", margin: "20px 0" }}>
         <h1>Little Feet Big Steps</h1>
@@ -24,7 +24,7 @@ function HomePage(){
             <div key={post.id} style={{ marginBottom: "20px" }}>
             <Link to={`/post/${post.id}`} style={{ textDecoration: "none", color: "blue" }}>
                 <h2>{post.title}</h2>
-                <p>{post.body.substring(0, 100)}...</p>
+                <div dangerouslySetInnerHTML={{ __html: post.body }}></div>
             </Link>
             </div>
         ))}

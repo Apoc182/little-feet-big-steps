@@ -25,8 +25,6 @@ SECRET_KEY = 'django-insecure-ne(*2_eq)j8+e2(w&)sr5m6%+6gaorv7g$*@8^i@op59+lp=%u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -50,8 +48,10 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
+
+
 
 ROOT_URLCONF = 'little_feet_big_steps.urls'
 
@@ -119,7 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -128,6 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'frontend', 'static'),
+# ]
 
 WEBPACK_LOADER = {
   "DEFAULT": {
@@ -140,3 +145,9 @@ WEBPACK_LOADER = {
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+ALLOWED_HOSTS = ["littlefeetbigsteps.com.au"]
+CSRF_TRUSTED_ORIGINS = ['https://littlefeetbigsteps.com.au']
+
+
+if DEBUG:
+    ALLOWED_HOSTS.append("localhost")
