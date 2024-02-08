@@ -49,8 +49,8 @@ const Map = ({ blogPosts }) => {
         >
           <div>
             <h2>{selectedLocation.title + " - " + format(parseISO(selectedLocation.created_at), "EEEE, do 'of' MMMM yyyy", { awareOfUnicodeTokens: true })}</h2>
-            {selectedLocation.images.map((imageURL, index) => (
-              <img key={index} src={imageURL} alt={`Location ${index}`} style={{ width: '300px', height: 'auto' }} />
+            {selectedLocation.images.map((image, index) => (
+              <img key={index} src={image.url} alt={`Location ${index}`} style={{ width: '300px', height: 'auto' }} />
             ))}
           </div>
         </InfoWindow>

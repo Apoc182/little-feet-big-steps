@@ -10,4 +10,4 @@ class BlogPostSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'body', 'lat', 'long', 'created_at', 'images', 'created_at']
 
     def get_images(self, obj):
-        return [x.image.url for x in obj.all_images]
+        return [{"url" : x.image.url, "caption" : x.caption} for x in obj.all_images]
