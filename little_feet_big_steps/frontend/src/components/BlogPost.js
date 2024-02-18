@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '../contexts/BlogPostsContext'; // Import the hook
 import ImageCarousel from './ImageCarousel'; // Import the component
 import './BlogPostStyles.css'; // Import the styles
+import './blogpost.css'
 
 const BlogPost = () => {
     const { id } = useParams(); // Get the blog post ID from URL parameters

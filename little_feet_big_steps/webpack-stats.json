@@ -1,1 +1,13 @@
-{"status":"done","chunks":{"frontend":["frontend-a6c69f4069965f226f95.js"]},"publicPath":"static/frontend/","assets":{"frontend-a6c69f4069965f226f95.js":{"name":"frontend-a6c69f4069965f226f95.js","publicPath":"static/frontend/frontend-a6c69f4069965f226f95.js"}}}
+{
+    "status": "done",
+    "chunks": {
+        "frontend": ["frontend-a6c69f4069965f226f95.js"]
+    },
+    "publicPath": "/static/frontend/",
+    "assets": {
+        "frontend-a6c69f4069965f226f95.js": {
+            "name": "frontend-a6c69f4069965f226f95.js",
+            "publicPath": "/static/frontend/frontend-a6c69f4069965f226f95.js"
+        }
+    }
+}

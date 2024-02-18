@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useBlogPosts } from '../contexts/BlogPostsContext'; // Import the hook
 
-
 function HomePage(){
 
     const blogPosts = useBlogPosts();
