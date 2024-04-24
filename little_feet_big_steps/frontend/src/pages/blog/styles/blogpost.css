@@ -36,9 +36,23 @@ p {
   font-size: 1.4rem;
 }
 
+.carousel-container {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.carousel-img {
+  height: 80vh;
+  object-fit: contain;
+}
+
 @media (max-width: 768px) {
   body,
   p {
     margin: 0 20px; /* Increase margin on smaller screens */
+  }
+
+  .carousel-img {
+    height: 30vh;
   }
 }

@@ -1,8 +1,10 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useBlogPosts } from "../../../contexts/BlogPostsContext";
 import "../styles/blogpost.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { styled } from "@mui/system";
 import React from "react";
 
 function BlogPageHeader(props) {
@@ -18,7 +20,7 @@ function BlogPageHeader(props) {
         }}
       >
         {props.id - 1 == 0 ? (
-          <Button variant="outlined" disabled startIcon={<ArrowBackIcon />} style={{ textTransform: "capitalize" }}>
+          <Button variant="outlined" disabled startIcon={<ArrowBackIcon />}>
             Previous Blog
           </Button>
         ) : (

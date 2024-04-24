@@ -1,24 +1,24 @@
 .header-container {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .header {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 4rem !important;
+  font-weight: 700 !important;
 }
 
 .sub-header {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 2rem !important;
+  font-weight: 400 !important;
 }
 
 .svg-container {
   width: 100%;
-  /* height: 150vh; */
+  height: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
@@ -27,5 +27,76 @@
 
 .home-pattern-svg {
   width: 85%;
-  /* height: 100vh; */
+  position: absolute;
+  top: -30%;
+}
+
+/* -----------------------------------------
+map
+----------------------------------------- */
+
+.map-container {
+  text-align: center;
+  margin: 0.5rem;
+  width: 22rem;
+}
+
+.map-content-header {
+  margin: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.map-content-body {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.map-image {
+  width: 22rem;
+  height: 18rem;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .home-pattern-svg {
+    top: 5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-pattern-svg {
+    width: 50rem;
+    top: -10%;
+  }
+
+  .header-container {
+    width: 90%;
+  }
+
+  .header {
+    font-size: 3rem !important;
+  }
+
+  .sub-header {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media only screen and (max-width: 522px) {
+  .header-container {
+    width: 95%;
+  }
+
+  .header {
+    font-size: 3rem !important;
+  }
+
+  .sub-header {
+    font-size: 1.3rem !important;
+  }
+
+  .home-pattern-svg {
+    width: 30rem;
+    top: -40%;
+  }
 }

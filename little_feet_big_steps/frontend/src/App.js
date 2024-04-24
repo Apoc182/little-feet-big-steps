@@ -4,6 +4,7 @@ import BlogPost from "./pages/blog/components/BlogPost";
 import HomePage from "./pages/home/HomePage";
 import { BlogPostsProvider } from "./contexts/BlogPostsContext"; // Import the provider
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (

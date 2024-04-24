@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useBlogPosts } from "../../contexts/BlogPostsContext"; // Import the hook
 import Map from "./components/Map"; // Adjust this import according to your file structure
 import Header from "./components/Header";
-
 import "./styles/style.css";
 import { Grid, Paper } from "@mui/material";
 
